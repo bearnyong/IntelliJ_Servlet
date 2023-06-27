@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!--응답할 servlet 클래스를 등록한다.-->
+    <servlet>
+        <!--servlet의 이름은 mapping으로 등록되어야 한다.-->
+        <servlet-name>xmlmapping</servlet-name>
+        <!--3. 클래스 루트를 설정해준다-->
+        <servlet-class>com.ohgiraffers.section01.xml.LifeCycleTestServlet</servlet-class>
+    </servlet>
+
+    <!--서블릿이 들어왔을 때 요청을 처리하기 위한 설정-->
+    <servlet-mapping>
+        <!--2. url 요청시 응답할 servlet을 설정한다.-->
+        <servlet-name>xmlmapping</servlet-name>
+        <!--1. 아래의 요청에 따라 서블릿이 응답한다.-->
+        <url-pattern>/xml-lifecycle</url-pattern>
+    </servlet-mapping>
+</web-app>
