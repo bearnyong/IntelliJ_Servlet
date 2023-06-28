@@ -42,8 +42,6 @@ public class ResponseTestServlet extends HttpServlet {
         /* 기본값은 text/plain이나 html 태그를 사용하면 요청 시 text/html도 응답을 수락 가능하도록 헤더 설정이 되어 있다.
         *  그래서 자동으로 text/html로 인식한다. 하지만 text/plain으로 설정하게 되면 html 태그를 태그로 인식하지 않고 문자열로 인식한다. */
         resp.setContentType("text/html");
-
-        /**/
         resp.setCharacterEncoding("UTF-8");
         System.out.println("changed response encoding : " + resp.getCharacterEncoding());
 
