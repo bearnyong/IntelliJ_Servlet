@@ -12,4 +12,54 @@
          WHERE ENT_YN = 'N'
            AND EMP_ID = ?
     </entry>
+
+    <entry key="selectNewEmpId">
+        SELECT
+            SEQ_EMPID.NEXTVAL
+        FROM DUAL
+    </entry>
+
+    <entry key="insetEmp">
+        INSERT
+            INTO EMPLOYEE
+            (
+                EMP_ID, EMP_NAME, EMP_NO, EMAIL, PHONE,
+                DEPT_CODE, JOB_CODE, SALARY, BONUS,
+                MANAGER_ID, HIRE_DATE, ENT_DATE, ENT_YN, SAL_LEVEL
+            ) VALUES
+            (
+                ?, ?, ?, ?, ?,
+                ?, ?, ?, ?,
+                ?, ?, NULL, 'N', 'S1'
+            )
+    </entry>
+    
+    <entry key="selectAllEmp">
+        SELECT
+               EMP_ID,
+               EMP_NAME,
+               EMP_NO,
+               EMAIL,
+               PHONE,
+               DEPT_CODE,
+               JOB_CODE,
+               SAL_LEVEL,
+               BONUS,
+               SALARY,
+               MANAGER_ID,
+               HIRE_DATE,
+               ENT_DATE,
+               ENT_YN
+          FROM EMPLOYEE
+         WHERE ENT_YN = 'N'
+    </entry>
+
+    <!--작성후 DAO파일로-->
+    <entry key="updateEmp">
+        UPDATE
+               EMPLOYEE
+           SET ENT_DATE = ?,
+               ENT_YN = 'Y'
+         WHERE EMP_ID = ?
+    </entry>
 </properties>
